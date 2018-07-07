@@ -1,3 +1,4 @@
+#Predicting stock exchange
 import pandas as pd
 from datetime import datetime
 from sklearn.metrics import mean_absolute_error
@@ -32,6 +33,7 @@ test=df[df["Date"]> datetime(year=2013, month=1, day=1)]
 lr=LinearRegression()
 lr.fit(train[["day_5"]],train["Close"])
 predictions1=lr.predict(test[["day_5"]])
+#mean absolute errors
 mae1=mean_absolute_error(predictions1,test["Close"])
 lr.fit(train[["day_30"]],train["Close"])
 predictions2=lr.predict(test[["day_30"]])
